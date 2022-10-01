@@ -1,4 +1,5 @@
 const listaAutos = require("./autos");
+const persona = require("./persona");
 
 let concesionaria = {
     autos: listaAutos,
@@ -26,11 +27,21 @@ let concesionaria = {
     },
 
     listaDeVentas: function() {
-        let autosVendidos = listaAutos.filter((auto) => auto.vendido==true);
+        let autosVendidos = this.autos.filter((auto) => auto.vendido==true);
         return autosVendidos.map((auto) => auto.precio);
-    }
+    },
 
-    
+    totalDeVentas: function() {
+        if(this.listaDeVentas().length != 0) {
+            return this.listaDeVentas().reduce((precioAnt, precioAct) => precioAnt + precioAct);
+        } else return 0;
+    },
+
+    puedeComprar: function(auto,persona) {
+        if(auto.precio <= persona.capacidadDePagoTotal && (auto.precio/auto.cuotas) <= persona.capacidadDePagoEnCuotas)
+            return true;
+        else return false;
+    }
 };
 
 module.exports = concesionaria;
