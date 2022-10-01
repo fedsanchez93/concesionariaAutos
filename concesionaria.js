@@ -23,7 +23,14 @@ let concesionaria = {
 
     autosNuevos: function() {
        return this.autosParaLaVenta().filter((auto) => auto.km < 100);
+    },
+
+    listaDeVentas: function() {
+        let autosVendidos = listaAutos.filter((auto) => auto.vendido==true);
+        return autosVendidos.map((auto) => auto.precio);
     }
+
+    
 };
 
 module.exports = concesionaria;
