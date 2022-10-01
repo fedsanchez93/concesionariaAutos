@@ -5,4 +5,6 @@ let auto = concesionaria.buscarAuto("APL123");
 
 concesionaria.venderAuto("APL123");
 
-console.log(auto);
+autosParaVenta = concesionaria.autosParaLaVenta();
+
+console.log(autosParaVenta);

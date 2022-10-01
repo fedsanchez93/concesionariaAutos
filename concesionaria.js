@@ -15,6 +15,10 @@ let concesionaria = {
         if(this.buscarAuto(patente)!=null){
             listaAutos[0].vendido = true;
         }
+    },
+
+    autosParaLaVenta: function() {
+        return listaAutos.filter((auto) => auto.vendido==false);
     }
 };
 
