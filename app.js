@@ -1,4 +1,6 @@
 const listaAutos = require("./autos");
 const concesionaria = require("./concesionaria");
 
-console.log(concesionaria.autos);
+let auto = concesionaria.buscarAuto("APL123");
+
+console.log(auto);

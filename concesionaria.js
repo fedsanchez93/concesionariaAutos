@@ -1,9 +1,15 @@
 const listaAutos = require("./autos");
 
-function Concesionaria(){
-    this.autos = listaAutos;
-}
+let concesionaria = {
+    autos: listaAutos,
 
-const concesionaria = new Concesionaria();
+    buscarAuto: function(patente) {
+        for(let i=0; i<listaAutos.length;i++){
+            if(listaAutos[i].patente === patente)
+                return listaAutos[i];
+            else return null;
+        }
+    }
+};
 
 module.exports = concesionaria;
