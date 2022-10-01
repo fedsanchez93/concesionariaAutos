@@ -9,6 +9,12 @@ let concesionaria = {
                 return listaAutos[i];
             else return null;
         }
+    },
+
+    venderAuto: function(patente) {
+        if(this.buscarAuto(patente)!=null){
+            listaAutos[0].vendido = true;
+        }
     }
 };
 
