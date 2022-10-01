@@ -7,4 +7,4 @@ let auto = concesionaria.buscarAuto("JJK116");
 //concesionaria.venderAuto("JJK116");
 //concesionaria.venderAuto("APL123");
 
-console.log(concesionaria.puedeComprar(auto,persona));
+console.log(concesionaria.autosQuePuedeComprar(persona));

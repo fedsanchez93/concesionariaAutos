@@ -41,6 +41,12 @@ let concesionaria = {
         if(auto.precio <= persona.capacidadDePagoTotal && (auto.precio/auto.cuotas) <= persona.capacidadDePagoEnCuotas)
             return true;
         else return false;
+    },
+
+    autosQuePuedeComprar: function(persona) {
+        let autosALaVenta = this.autosParaLaVenta();
+        let autosDisponibles = autosALaVenta.filter((auto) => this.puedeComprar(auto,persona) == true);
+        return autosDisponibles;
     }
 };
 
