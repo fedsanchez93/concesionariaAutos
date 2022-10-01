@@ -1,3 +1,4 @@
-const autos = require("./autos");
+const listaAutos = require("./autos");
+const concesionaria = require("./concesionaria");
 
-console.log(autos);
+console.log(concesionaria.autos);
